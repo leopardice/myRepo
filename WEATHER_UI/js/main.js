@@ -11,6 +11,8 @@ import {
 
 import { convertTime, convertDate, convertTemprature } from "./helpers.js";
 
+import { format } from "date-fns";
+
 UI_ELEMENTS.SEARCH_BTN.addEventListener("click", getWeather);
 
 UI_ELEMENTS.BUTTON_NOW_SECTION.addEventListener("click", function () {
@@ -29,6 +31,9 @@ UI_ELEMENTS.BUTTON_FORECAST_SECTION.addEventListener("click", function () {
 });
 
 UI_ELEMENTS.LIKE_BUTTON.addEventListener("click", addFavoriteCity);
+
+const now = new Date();
+console.log(now);
 
 const favoriteCitiesSet = new Set();
 
