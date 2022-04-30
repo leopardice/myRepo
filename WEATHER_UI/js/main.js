@@ -6,7 +6,6 @@ import {
   makeLikeImgBlack,
   makeLikeImgWhite,
   showForecast,
-  createListItemForCity,
 } from "./view.js";
 
 import { convertTime, convertDate, convertTemprature } from "./helpers.js";
