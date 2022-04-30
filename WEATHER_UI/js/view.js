@@ -1,5 +1,3 @@
-import { getWeather } from "./main.js";
-
 import { convertTime, convertDate, convertTemprature } from "./helpers.js";
 
 export const UI_ELEMENTS = {
@@ -169,10 +167,10 @@ export function showForecast(forecastArray) {
   });
 }
 
-export function createListItemForCity(cityName) {
-  const li = document.createElement("li");
-  li.classList.add("list-item");
-  li.textContent = cityName;
-  li.addEventListener("click", getWeather);
-  UI_ELEMENTS.CITIES_LIST.append(li);
-}
+// export function createListItemForCity(cityName) {
+//   const li = document.createElement("li");
+//   li.classList.add("list-item");
+//   li.textContent = cityName;
+//   li.addEventListener("click", getWeather);
+//   UI_ELEMENTS.CITIES_LIST.append(li);
+// }

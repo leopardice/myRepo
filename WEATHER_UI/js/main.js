@@ -8,9 +8,9 @@ import {
   showForecast,
 } from "./view.js";
 
-import { convertTime, convertDate, convertTemprature } from "./helpers.js";
+import { convertTime, convertTemprature } from "./helpers.js";
 
-import { format } from "date-fns";
+// import { format } from "date-fns";
 
 UI_ELEMENTS.SEARCH_BTN.addEventListener("click", getWeather);
 
@@ -136,4 +136,12 @@ function removeCity(cityName) {
 
   ListItem.remove();
   makeLikeImgWhite();
+}
+
+function createListItemForCity(cityName) {
+  const li = document.createElement("li");
+  li.classList.add("list-item");
+  li.textContent = cityName;
+  li.addEventListener("click", getWeather);
+  UI_ELEMENTS.CITIES_LIST.append(li);
 }
