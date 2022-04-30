@@ -532,7 +532,6 @@ parcelHelpers.export(exports, "getWeather", ()=>getWeather
 );
 var _viewJs = require("./view.js");
 var _helpersJs = require("./helpers.js");
-var _dateFns = require("date-fns");
 _viewJs.UI_ELEMENTS.SEARCH_BTN.addEventListener("click", getWeather);
 _viewJs.UI_ELEMENTS.BUTTON_NOW_SECTION.addEventListener("click", function() {
     _viewJs.showInfoSection("now");
@@ -547,20 +546,19 @@ _viewJs.UI_ELEMENTS.BUTTON_FORECAST_SECTION.addEventListener("click", function()
     _viewJs.makeBtnSectionBackgroundBlack("forecast");
 });
 _viewJs.UI_ELEMENTS.LIKE_BUTTON.addEventListener("click", addFavoriteCity);
-const now = new Date();
-console.log(now);
 const favoriteCitiesSet = new Set();
 function showCitiesFromLocalStorage() {
     const citiesArr = JSON.parse(localStorage.getItem("favoriteCities"));
     for (let cityName of citiesArr)if (cityName) favoriteCitiesSet.add(cityName);
-    for (let cityName1 of favoriteCitiesSet)_viewJs.createListItemForCity(cityName1);
+    for (let cityName1 of favoriteCitiesSet)createListItemForCity(cityName1);
 }
 const SERVER_URL = "https://api.openweathermap.org/data/2.5";
 const WEATHER_INFO = "/weather";
 const FORECAST_INFO = "/forecast";
 const API_KEY = "f660a2fb1e4bad108d6160b7f58c555f";
 function showCurrentCityFromLocalStorage() {
-    const currentCity = localStorage.getItem("currentCity");
+    // const currentCity = localStorage.getItem("currentCity");
+    const currentCity = getCookie("currentCity");
     _viewJs.UI_ELEMENTS.SEARCH_FIELD.value = currentCity;
     getWeather();
 }
@@ -590,7 +588,10 @@ async function getWeather() {
         const weatherObject = new Weather();
         _viewJs.showWeather(weatherObject);
         getForecast(cityName);
-        localStorage.setItem("currentCity", cityName);
+        setCookie("currentCity", cityName, {
+            "max-age": 3600
+        });
+    // localStorage.setItem("currentCity", cityName);
     } catch (err) {
         alert(err);
         _viewJs.UI_ELEMENTS.SEARCH_FIELD.value = "";
@@ -612,7 +613,7 @@ function addFavoriteCity() {
         _viewJs.makeLikeImgWhite();
     } else {
         favoriteCitiesSet.add(cityName);
-        _viewJs.createListItemForCity(cityName);
+        createListItemForCity(cityName);
         _viewJs.makeLikeImgBlack();
     }
     localStorage.setItem("favoriteCities", JSON.stringify([
@@ -627,8 +628,34 @@ function removeCity(cityName) {
     ListItem.remove();
     _viewJs.makeLikeImgWhite();
 }
+function createListItemForCity(cityName) {
+    const li = document.createElement("li");
+    li.classList.add("list-item");
+    li.textContent = cityName;
+    li.addEventListener("click", getWeather);
+    _viewJs.UI_ELEMENTS.CITIES_LIST.append(li);
+}
+function getCookie(name) {
+    let matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, "\\$1") + "=([^;]*)"));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+function setCookie(name, value, options = {}) {
+    options = {
+        path: "/",
+        // при необходимости добавьте другие значения по умолчанию
+        ...options
+    };
+    if (options.expires instanceof Date) options.expires = options.expires.toUTCString();
+    let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+    for(let optionKey in options){
+        updatedCookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) updatedCookie += "=" + optionValue;
+    }
+    document.cookie = updatedCookie;
+}
 
-},{"./view.js":"2GA9o","./helpers.js":"6s1be","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","date-fns":"9yHCA"}],"2GA9o":[function(require,module,exports) {
+},{"./view.js":"2GA9o","./helpers.js":"6s1be","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2GA9o":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "UI_ELEMENTS", ()=>UI_ELEMENTS
@@ -644,10 +671,14 @@ parcelHelpers.export(exports, "showInfoSection", ()=>showInfoSection
 parcelHelpers.export(exports, "makeBtnSectionBackgroundBlack", ()=>makeBtnSectionBackgroundBlack
 );
 parcelHelpers.export(exports, "showForecast", ()=>showForecast
-);
-parcelHelpers.export(exports, "createListItemForCity", ()=>createListItemForCity
-);
-var _mainJs = require("./main.js");
+) // export function createListItemForCity(cityName) {
+ //   const li = document.createElement("li");
+ //   li.classList.add("list-item");
+ //   li.textContent = cityName;
+ //   li.addEventListener("click", getWeather);
+ //   UI_ELEMENTS.CITIES_LIST.append(li);
+ // }
+;
 var _helpersJs = require("./helpers.js");
 const UI_ELEMENTS = {
     SEARCH_FORM: document.querySelector(".search-form"),
@@ -782,15 +813,8 @@ function showForecast(forecastArray) {
 </li>`;
     });
 }
-function createListItemForCity(cityName) {
-    const li = document.createElement("li");
-    li.classList.add("list-item");
-    li.textContent = cityName;
-    li.addEventListener("click", _mainJs.getWeather);
-    UI_ELEMENTS.CITIES_LIST.append(li);
-}
 
-},{"./main.js":"bDbGG","./helpers.js":"6s1be","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6s1be":[function(require,module,exports) {
+},{"./helpers.js":"6s1be","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6s1be":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "convertTemprature", ()=>convertTemprature
@@ -799,23 +823,18 @@ parcelHelpers.export(exports, "convertTime", ()=>convertTime
 );
 parcelHelpers.export(exports, "convertDate", ()=>convertDate
 );
+var _dateFns = require("date-fns");
 function convertTemprature(kelvin) {
     return Math.round(kelvin - 273.15);
 }
 function convertTime(time) {
-    return new Date(time * 1000).toLocaleTimeString("en-GB", {
-        hour: "2-digit",
-        minute: "2-digit"
-    });
+    return _dateFns.format(new Date(time * 1000), "kk:mm");
 }
 function convertDate(date) {
-    return new Date(date * 1000).toLocaleDateString("en-GB", {
-        month: "long",
-        day: "numeric"
-    });
+    return _dateFns.format(new Date(date * 1000), "d LLL");
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","date-fns":"9yHCA"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
