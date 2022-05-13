@@ -58,7 +58,7 @@ function showCurrentCityFromLocalStorage() {
 showCurrentCityFromLocalStorage();
 showCitiesFromLocalStorage();
 
-export async function getWeather() {
+async function getWeather() {
   const formValue = UI_ELEMENTS.SEARCH_FIELD.value;
   const cityName = formValue || this.textContent;
   UI_ELEMENTS.SEARCH_FIELD.value = '';

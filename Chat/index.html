@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="main-screen">
+        <div class="menu-buttons">
+            <button class="settings-button button">Настройки</button>
+            <button class="exit-button button">Выйти</button>
+        </div>
+        <div class="chat-screen">
+            <p class="message-sent message-read message">Я: Добрый день!</p>
+            <p class="message-received message-read message">Мой собеседник: Добрый день!</p>
+            <p class="message message-received message-read">Мой собеседник: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке</p>
+            <p class="message-sent message-unread message">Я: Добрый день!</p>
+            <template class="message-template">
+                <p class="message-sent message-read message">Я: Добрый день!</p>
+            </template>
+        </div>
+        <form class="message-form">
+            <label>
+            <input type="text" class="message-input" placeholder="  сообщение..">
+            <button type="submit" class="send-message-button">-></button>
+            </label>
+        </form>
+    </div>
+    </div>
+    <div class="additional-menu-screen authorization-menu ">
+        <div class="menu-container">
+            <div class="menu-header">
+                <p>Авторизация</p>
+                <button class="button-close">+</button>
+            </div>
+            <form action="#" class="create-account-form form" method="GET">
+                <label for="e-mail">Почта:</label>
+                <input type="text" name="e-mail" id="e-mail" class="e-mail-input form-input" required>
+                <button type="submit" class="button-create button">Получить код</button>
+            </form>
+        </div>
+    </div>
+    <div class="additional-menu-screen log-in-menu">
+    <div class="menu-container">
+        <div class="menu-header">
+            <p>Подтверждение</p>
+            <button class="button-close">+</button>
+        </div>
+        <form action="#" class="create-account-form form" method="GET">
+            <label for="code">Код</label>
+            <input type="text" name="code" id="code" class="code-input form-input" required>
+            <button type="submit" class="button-log-in button">Войти</button>
+        </form>
+</div>
+</div>
+    <div class="additional-menu-screen settings-menu">
+        <div class="menu-container">
+            <div class="menu-header">
+                <p>Настройки</p>
+                <button class="button-close">+</button>
+            </div>
+            <form action="#" class="chat-name-form form" method="GET">
+                <label for="chat-name">Имя в чате</label>
+                <div class="chat-name-container">
+                <input type="text" name="chat-name" id="chat-name" class="chat-name-input form-input" required>
+                <button type="submit" class="button-log-in button">-></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
