@@ -7,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/view.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,18 +18,18 @@
             <button class="exit-button button">Выйти</button>
         </div>
         <div class="chat-screen">
-            <p class="message-sent message-read message">Я: Добрый день!</p>
-            <p class="message-received message-read message">Мой собеседник: Добрый день!</p>
-            <p class="message message-received message-read">Мой собеседник: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке</p>
-            <p class="message-sent message-unread message">Я: Добрый день!</p>
-            <template class="message-template">
-                <p class="message-sent message-read message">Я: Добрый день!</p>
-            </template>
+            <div class="message-sent message-read message"><p>Я: Добрый день!</p></div>
+            <div class="message-received message-read message"><p>Мой собеседник: Добрый день!</p></div>
+            <div class="message message-received message-read"><p>Мой собеседник: А это второе и, кажется, оно очень длинное, чтобы поместиться на одной строке</p></div>
+            <div class="message-sent message-unread message"><p>Я: Добрый день!</p></div>
         </div>
-        <form class="message-form">
+            <template class="message-template">
+                <div class="message-sent message-read message"><p>Я: Добрый день!</p></div>
+            </template>
+        <form class="message-form" >
             <label>
-            <input type="text" class="message-input" placeholder="  сообщение..">
-            <button type="submit" class="send-message-button">-></button>
+            <input type="text" name="message-input" class="message-input" placeholder="  сообщение..">
+            <input type="submit" value="->" name="message-submit" class="send-message-button">
             </label>
         </form>
     </div>
@@ -41,7 +43,7 @@
             <form action="#" class="create-account-form form" method="GET">
                 <label for="e-mail">Почта:</label>
                 <input type="text" name="e-mail" id="e-mail" class="e-mail-input form-input" required>
-                <button type="submit" class="button-create button">Получить код</button>
+                <button type="submit" name="submit" class="button-create button">Получить код</button>
             </form>
         </div>
     </div>
@@ -51,7 +53,7 @@
             <p>Подтверждение</p>
             <button class="button-close">+</button>
         </div>
-        <form action="#" class="create-account-form form" method="GET">
+        <form class="confirmation-form form">
             <label for="code">Код</label>
             <input type="text" name="code" id="code" class="code-input form-input" required>
             <button type="submit" class="button-log-in button">Войти</button>
@@ -64,7 +66,7 @@
                 <p>Настройки</p>
                 <button class="button-close">+</button>
             </div>
-            <form action="#" class="chat-name-form form" method="GET">
+            <form class="chat-name-form form">
                 <label for="chat-name">Имя в чате</label>
                 <div class="chat-name-container">
                 <input type="text" name="chat-name" id="chat-name" class="chat-name-input form-input" required>
