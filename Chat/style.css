@@ -39,6 +39,8 @@ button {
 .main-screen {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    overflow: auto;
     gap: 5px;
 }
 
@@ -49,14 +51,16 @@ button {
 
 .chat-screen {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: column-reverse;
     gap: 5px;
     width: 304px;
+    max-width: 304px;
     height: 437px;
+    max-height: 437px;
     background: #FFFFFF;
     border: 1px solid #000000;
     padding-bottom: 5px;
+    overflow-y : scroll;
 }
 
 .message {
