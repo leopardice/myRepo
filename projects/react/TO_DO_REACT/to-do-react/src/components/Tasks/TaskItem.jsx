@@ -5,6 +5,7 @@ const TaskItem = (props) => {
     const taskId = props.id;
     const deleteButtonHandler = ()=> {
         props.onDeleteTask(taskId);
+        console.log(taskId);
     };
 
     return (

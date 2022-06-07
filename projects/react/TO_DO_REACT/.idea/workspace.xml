@@ -4,6 +4,8 @@
     <list default="true" id="d64a7960-08f2-4b09-a3a2-ab8828680f30" name="Changes" comment="react To-Do">
       <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do-react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-react/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do-react/src/components/Tasks/TaskItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-react/src/components/Tasks/TaskItem.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654616147312</updated>
-      <workItem from="1654616148669" duration="9225000" />
+      <workItem from="1654616148669" duration="9834000" />
     </task>
     <task id="LOCAL-00001" summary="react To-Do">
       <created>1654629373425</created>
@@ -61,7 +63,21 @@
       <option name="project" value="LOCAL" />
       <updated>1654629373425</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="react To-Do">
+      <created>1654629778764</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654629778764</updated>
+    </task>
+    <task id="LOCAL-00003" summary="react To-Do">
+      <created>1654629920223</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1654629920223</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
