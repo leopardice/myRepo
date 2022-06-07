@@ -1,2 +1,4 @@
 .DS_Store
-/WEATHER_UI/node_modules
+node_modules
+test
+HTML:CSS

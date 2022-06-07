@@ -1,0 +1,58 @@
+.task-title-control {
+    background-color: #a892ee;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 25rem;
+    max-width: 95%;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+}
+
+.task-title-control label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.task-title-control input {
+    font: inherit;
+    padding: 0.5rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    width: 20rem;
+    max-width: 100%;
+}
+
+.task-title-control button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 12px;
+    margin: 0 auto;
+    width: 20rem;
+    max-width: 100%;
+}
+
+.task-title-control button:hover,
+.task-title-control button:active {
+    background-color: #510674;
+    border-color: #510674;
+}
+
+.task-title-control button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.task-title-control button.alternative:hover,
+.task-title-control button.alternative:active {
+    background-color: #ddb3f8;
+}
