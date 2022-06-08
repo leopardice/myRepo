@@ -24,9 +24,7 @@ function App() {
 
     const deleteTaskHandler = id => {
         setTasks(prevTasks => {
-            const deletedTaskIndex = prevTasks.findIndex(task => task.id === id);
-            prevTasks.splice(deletedTaskIndex, 1);
-            return prevTasks;
+            return prevTasks.filter(task => task.id !== id)
          })
     }
 
