@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d64a7960-08f2-4b09-a3a2-ab8828680f30" name="Changes" comment="react To-Do">
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Chart/Chart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Chart/Chart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Chart/ChartBar.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Chart/ChartBar.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/ExpensesChart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/ExpensesList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/ExpensesList.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/ExpenseItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/ExpenseItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/Expenses.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/Expenses/Expenses.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/NewExpense/ExpenseForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/NewExpense/ExpenseForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/NewExpense/NewExpense.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Expense Tracker/Expense Tracker/src/components/NewExpense/NewExpense.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do-react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-react/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do-react/src/components/Tasks/TaskItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-react/src/components/Tasks/TaskItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do-react/src/components/Tasks/Tasks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/to-do-react/src/components/Tasks/Tasks.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1654616147312</updated>
-      <workItem from="1654616148669" duration="9834000" />
+      <workItem from="1654616148669" duration="11276000" />
     </task>
     <task id="LOCAL-00001" summary="react To-Do">
       <created>1654629373425</created>
@@ -77,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654629920223</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="react To-Do">
+      <created>1654630540942</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1654630540942</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

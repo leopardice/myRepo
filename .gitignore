@@ -6,3 +6,5 @@ dist
 dest
 .parcel-cache
 WEATHER_UI
+.gitignore
+.idea

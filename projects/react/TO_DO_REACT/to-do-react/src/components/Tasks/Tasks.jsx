@@ -4,7 +4,6 @@ import "./Tasks.css"
 
 const Tasks = (props) => {
 
-
     return (
         <div className="tasks">
             {props.tasks.map(task => (
