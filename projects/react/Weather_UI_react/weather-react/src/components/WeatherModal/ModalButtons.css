@@ -1,0 +1,10 @@
+.modal-buttons{
+    border-top: 1px solid black;
+    display: flex;
+}
+
+.now-button, .details-button {
+    border-right: 1px solid black;
+}
+
+

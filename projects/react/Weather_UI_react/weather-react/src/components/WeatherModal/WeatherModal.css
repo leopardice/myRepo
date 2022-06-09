@@ -1,0 +1,8 @@
+.weather-modal {
+    /*border: 1px solid black;*/
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid black;
+    justify-content: end;
+}

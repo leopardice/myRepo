@@ -1,0 +1,21 @@
+.search-form {
+    grid-column: 1/-1;
+    position: relative;
+    display: flex;
+    border-bottom: 1px solid black;
+    height: auto;
+}
+
+.search-field {
+    width: 100%;
+    height: 45px;
+    border: none;
+}
+
+.search-icon {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}

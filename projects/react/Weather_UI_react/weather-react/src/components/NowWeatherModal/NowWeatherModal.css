@@ -1,0 +1,26 @@
+.now-weather-modal {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+}
+
+.temperature-indicator {
+    font-size: 5rem;
+    font-weight: 400;
+}
+
+.location-name {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.like-button {
+    height: 2.5rem;
+}
+
+
+.now-weather-modal .weather-img{
+    align-self: center;
+}
