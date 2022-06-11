@@ -38,6 +38,7 @@ export async function getForecast(locationName) {
 
     const forecastInfo = forecastArray.map(item => {
         const forecastObject = {
+            id: Math.random().toString(),
             date: convertDate(item.dt),
             time: convertTime(item.dt),
             temperature: convertTemperature(item.main.temp),

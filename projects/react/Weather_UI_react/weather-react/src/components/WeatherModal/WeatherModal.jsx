@@ -6,7 +6,7 @@ import NowWeatherModal from "../NowWeatherModal/NowWeatherModal";
 import DetailsModal from "../DetailsModal/DetailsModal";
 
 const WeatherModal = (props) => {
-    const [currentModal, setCurrentModal] = useState('Forecast');
+    const [currentModal, setCurrentModal] = useState('Now');
 
     const onButtonModalClickHandler = (event) => {
         setCurrentModal(event.target.textContent);
@@ -17,6 +17,9 @@ const WeatherModal = (props) => {
             {currentModal === 'Now' && <NowWeatherModal
                 locationName={props.locationName}
                 temperature={props.temperature}
+                onAddLocation={props.onAddLocation}
+                isCityInlist={props.isCityInlist}
+                onRemoveLocation={props.onRemoveLocation}
             />}
             {currentModal === 'Details' && <DetailsModal
                 locationName={props.locationName}
@@ -26,7 +29,8 @@ const WeatherModal = (props) => {
                 sunriseTime={props.sunriseTime}
                 sunsetTime={props.sunsetTime}
             />}
-            {currentModal === 'Forecast' && <ForecastModal/>}
+            {currentModal === 'Forecast' && <ForecastModal
+                forecastInfo={props.forecastInfo}/>}
             <ModalButtons onNowClick={onButtonModalClickHandler}/>
         </div>
     );

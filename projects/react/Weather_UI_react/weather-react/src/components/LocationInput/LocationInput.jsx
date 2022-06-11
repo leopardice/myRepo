@@ -6,13 +6,17 @@ const LocationInput = (props) => {
     const [locationName, setLocationName] = useState('');
 
     const changeLocationName = (event) => {
-      setLocationName(event.target.value);
+        setLocationName(event.target.value);
     }
 
     const locationInputSubmitHandler = (event) => {
         event.preventDefault();
 
-        props.onChangeLocationName(locationName);
+        const firstLetter = locationName[0].toUpperCase();
+        const otherLetters = locationName.slice(1, locationName.length).toLowerCase();
+        const updatedLocationName= firstLetter.concat(otherLetters);
+
+        props.onChangeLocationName(updatedLocationName);
 
         setLocationName('');
     }

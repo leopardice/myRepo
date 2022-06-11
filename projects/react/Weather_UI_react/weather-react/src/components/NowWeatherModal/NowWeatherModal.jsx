@@ -11,7 +11,12 @@ const NowWeatherModal = (props) => {
         <div className="now-weather-modal">
             <TemperatureNumber temperature={props.temperature}/>
             <WeatherImg/>
-            <LikeLocation locationName={props.locationName}/>
+            <LikeLocation
+                locationName={props.locationName}
+                onRemoveLocation={props.onRemoveLocation}
+                onAddLocation={props.onAddLocation}
+                isCityInlist={props.isCityInlist}
+            />
         </div>
     );
 };

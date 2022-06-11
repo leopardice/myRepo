@@ -10,11 +10,11 @@ import WeatherImg from "../WeatherInfo/WeatherImg";
 const ForecastItem = (props) => {
     return (
         <div className='forecast-item'>
-            <Date/>
-            <Time/>
-            <TemperatureIndicator/>
-            <WeatherDescription/>
-            <FeelsLikeTemperature/>
+            <Date date={props.date}/>
+            <Time time={props.time}/>
+            <TemperatureIndicator temperature={props.temperature}/>
+            <WeatherDescription weatherDescription={props.weatherDescription}/>
+            <FeelsLikeTemperature feelsLike={props.feelsLike}/>
             <WeatherImg/>
         </div>
     );

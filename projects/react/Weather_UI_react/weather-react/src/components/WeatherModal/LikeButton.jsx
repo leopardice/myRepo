@@ -1,10 +1,14 @@
 import React from 'react';
-import heart from '../../img/heart.svg'
+import heartClear from '../../img/heartClear.svg'
+import heartBlack from '../../img/heartBlack.svg'
 import './LikeButton.css'
 
-const LikeButton = () => {
+const LikeButton = (props) => {
+
+    const likeImgSrc = props.isCityInlist ? heartBlack : heartClear;
+    const likeButtonClickHandler = props.isCityInlist ? props.onRemoveLocation : props.onAddLocation;
     return (
-        <input type="image" src={heart} className="like-button"/>
+        <input type="image" src={likeImgSrc} className="like-button" onClick={likeButtonClickHandler}/>
     );
 };
 

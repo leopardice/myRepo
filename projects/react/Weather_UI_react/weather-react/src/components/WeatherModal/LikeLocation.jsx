@@ -8,7 +8,11 @@ const LikeLocation = (props) => {
     return (
         <div className="like-location">
             <LocationName locationName={props.locationName}/>
-            <LikeButton/>
+            <LikeButton
+                onAddLocation={props.onAddLocation}
+                onRemoveLocation={props.onRemoveLocation}
+                isCityInlist={props.isCityInlist}
+            />
         </div>
     );
 };

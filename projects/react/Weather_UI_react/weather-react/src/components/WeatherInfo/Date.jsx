@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Date = () => {
+const Date = (props) => {
     return (
         <div>
-            10 Jun
+            {props.date}
         </div>
     );
 };
