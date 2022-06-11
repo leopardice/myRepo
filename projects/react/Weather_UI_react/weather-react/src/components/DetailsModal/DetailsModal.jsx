@@ -10,12 +10,12 @@ import "./DetailsModal.css"
 const DetailsModal = (props) => {
     return (
         <div className="details-modal">
-            <LocationName/>
-            <TemperatureNow/>
-            <FeelsLikeTemperature/>
-            <WeatherDescription/>
-            <SunriseTime/>
-            <SunsetTime/>
+            <LocationName locationName={props.locationName}/>
+            <TemperatureNow temperature={props.temperature}/>
+            <FeelsLikeTemperature feelsLike={props.feelsLike}/>
+            <WeatherDescription weatherDescription={props.weatherDescription}/>
+            <SunriseTime sunriseTime={props.sunriseTime}/>
+            <SunsetTime sunsetTime={props.sunsetTime}/>
         </div>
     );
 };

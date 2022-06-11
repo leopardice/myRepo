@@ -4,6 +4,7 @@ import LikeButton from "./LikeButton";
 import "./LikeLocation.css"
 
 const LikeLocation = (props) => {
+
     return (
         <div className="like-location">
             <LocationName locationName={props.locationName}/>

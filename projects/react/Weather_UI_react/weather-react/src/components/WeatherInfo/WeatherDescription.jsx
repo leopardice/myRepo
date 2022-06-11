@@ -3,7 +3,7 @@ import React from 'react';
 const WeatherDescription = (props) => {
     return (
         <div>
-           Weather: Clear
+           Weather: {props.weatherDescription}
         </div>
     );
 };

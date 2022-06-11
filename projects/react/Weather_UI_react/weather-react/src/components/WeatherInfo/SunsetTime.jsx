@@ -3,7 +3,7 @@ import React from 'react';
 const SunsetTime = (props) => {
     return (
         <div>
-            Sunset: 19:19
+            Sunset: {props.sunsetTime}
         </div>
     );
 };

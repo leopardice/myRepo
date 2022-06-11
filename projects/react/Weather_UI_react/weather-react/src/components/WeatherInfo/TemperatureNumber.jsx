@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TemperatureNumber = () => {
+const TemperatureNumber = (props) => {
     return (
         <span className="temperature-number">
-            14°
+            {props.temperature}°
         </span>
     );
 };

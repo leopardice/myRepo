@@ -3,7 +3,7 @@ import React from 'react';
 const FeelsLikeTemperature = (props) => {
     return (
         <div>
-            Feels like: 10°
+            Feels like: {props.feelsLike}°
         </div>
     );
 };
