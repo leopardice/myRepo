@@ -1,0 +1,17 @@
+.details-modal {
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    height: 100%;
+    gap: 1rem;
+}
+
+.details-modal .location-name {
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.temperature-indicator-details {
+    font-size: inherit;
+}

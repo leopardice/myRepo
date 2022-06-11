@@ -2,17 +2,18 @@ import React from 'react';
 import ModalButton from "../UI/ModalButton";
 import './ModalButtons.css'
 const ModalButtons = (props) => {
+
     return (
         <div className="modal-buttons">
-        <ModalButton className='now-button'>
+        <button className='modal-button now-button' onClick={props.onNowClick}>
             Now
-        </ModalButton>
-            <ModalButton className='details-button'>
+        </button>
+            <button className='details-button modal-button' onClick={props.onNowClick}>
                 Details
-            </ModalButton>
-            <ModalButton className='forecast-button'>
+            </button>
+            <button className='forecast-button modal-button' onClick={props.onNowClick}>
                 Forecast
-            </ModalButton>
+            </button>
         </div>
     );
 };

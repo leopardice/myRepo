@@ -1,15 +1,15 @@
 import React from 'react';
 import './NowWeatherModal.css'
-import TemperatureIndicator from "../TemperatureIndicator";
-import WeatherImg from "../WeatherImg";
+import TemperatureIndicator from "../WeatherInfo/TemperatureNumber";
+import WeatherImg from "../WeatherInfo/WeatherImg";
 import LikeLocation from "../WeatherModal/LikeLocation";
 import './NowWeatherModal.css'
-const NowWeatherModal = () => {
+const NowWeatherModal = (props) => {
     return (
         <div className="now-weather-modal">
             <TemperatureIndicator />
             <WeatherImg/>
-            <LikeLocation/>
+            <LikeLocation locationName={props.locationName}/>
         </div>
     );
 };

@@ -1,0 +1,24 @@
+.forecast-item {
+    width: 26rem;
+    height: 12rem;
+    font-size: 1.8rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 1px solid black;
+    padding: 0.5rem;
+    align-items: center;
+    justify-items: start;
+}
+
+.forecast-item .weather-img {
+    height: 3rem;
+    width: 3rem;
+    justify-self: center;
+}
+
+.forecast-item .time {
+    justify-self: end;
+    align-self: center;
+}
+
+

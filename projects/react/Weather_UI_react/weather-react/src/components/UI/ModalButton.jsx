@@ -4,9 +4,9 @@ import './ModalButton.css'
 const ModalButton = (props) => {
     const classes = 'modal-button' + ' ' + props.className;
     return (
-        <div className={classes}>
+        <button className='modal-button'>
             {props.children}
-        </div>
+        </button>
     );
 };
 

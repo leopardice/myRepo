@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./WeatherModal.css"
-import TemperatureIndicator from "../TemperatureIndicator";
-import WeatherImg from "../WeatherImg";
-import LocationName from "../LocationName";
-import LikeButton from "./LikeButton";
-import LikeLocation from "./LikeLocation";
 import ModalButtons from "./ModalButtons";
+import ForecastModal from "../ForecastModal/ForecastModal";
 import NowWeatherModal from "../NowWeatherModal/NowWeatherModal";
+import DetailsModal from "../DetailsModal/DetailsModal";
 
-const WeatherModal = () => {
+const WeatherModal = (props) => {
+    const [currentModal, setCurrentModal] = useState('Forecast');
+
+
+    const onButtonModalClickHandler = (event) => {
+        setCurrentModal(event.target.textContent);
+    }
+
     return (
         <div className="weather-modal">
-            <NowWeatherModal/>
-            <ModalButtons/>
+            {currentModal === 'Now' && <NowWeatherModal locationName={props.locationName}/>}
+            {currentModal === 'Details' && <DetailsModal/>}
+            {currentModal === 'Forecast' && <ForecastModal/>}
+            <ModalButtons onNowClick={onButtonModalClickHandler}/>
         </div>
     );
 };

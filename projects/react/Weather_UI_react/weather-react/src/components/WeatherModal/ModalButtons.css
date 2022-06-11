@@ -1,10 +1,27 @@
-.modal-buttons{
+.modal-buttons {
     border-top: 1px solid black;
     display: flex;
 }
 
-.now-button, .details-button {
+.modal-button {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: center;
+    height: 5rem;
+    background-color: white;
+    border: none;
+    font-size: 2rem;
     border-right: 1px solid black;
+}
+
+.modal-button:last-child {
+    border-right: none;
+}
+
+.modal-button:hover {
+    background-color: #dcdcdc;
+    cursor: pointer;
 }
 
 

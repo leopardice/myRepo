@@ -1,12 +1,12 @@
 import React from 'react';
-import LocationName from "../LocationName";
+import LocationName from "../WeatherInfo/LocationName";
 import LikeButton from "./LikeButton";
 import "./LikeLocation.css"
 
-const LikeLocation = () => {
+const LikeLocation = (props) => {
     return (
         <div className="like-location">
-            <LocationName/>
+            <LocationName locationName={props.locationName}/>
             <LikeButton/>
         </div>
     );
