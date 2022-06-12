@@ -12,6 +12,7 @@ const ForecastModal = (props) => {
             temperature={item.temperature}
             weatherDescription={item.weatherDescription}
             feelsLike={item.feelsLike}
+            iconId={item.iconId}
         />
     })
 

@@ -6,11 +6,19 @@ import {getForecast, getWeather} from "./js/fetchRequests"
 import AddedLocationsModal from "./components/AddedLocations/AddedLocationsModal";
 
 function App() {
-    const [locationName, setLocationName] = useState('Bryansk');
+    const [locationName, setLocationName] = useState('Rio');
     const [weatherInfo, setWeatherInfo] = useState({});
     const [forecastInfo, setForecastInfo] = useState([]);
     const [addedLocations, setAddedLocations] = useState(new Set([]));
     const [isCityInList, setIsCityInList] = useState(false);
+
+    useEffect(() => {
+        getWeather(locationName)
+            .then(weatherInfo => setWeatherInfo(weatherInfo));
+        getForecast(locationName)
+            .then(forecastInfo => setForecastInfo(forecastInfo));
+    }, []);
+
 
     useEffect(() => {
        getWeather(locationName)
@@ -50,7 +58,7 @@ function App() {
                     weatherDescription={weatherInfo.weatherDescription}
                     sunriseTime={weatherInfo.sunriseTime}
                     sunsetTime={weatherInfo.sunsetTime}
-                    icon={weatherInfo.icon}
+                    iconId={weatherInfo.icon}
                     forecastInfo={forecastInfo}
                     onAddLocation={onAddLocation}
                     onRemoveLocation={onRemoveLocation}

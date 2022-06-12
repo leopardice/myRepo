@@ -44,7 +44,7 @@ export async function getForecast(locationName) {
             temperature: convertTemperature(item.main.temp),
             weatherDescription: item.weather[0].main,
             feelsLike: convertTemperature(item.main.feels_like),
-            icon: item.weather[0].icon,
+            iconId: item.weather[0].icon,
         }
         return forecastObject;
     })

@@ -19,3 +19,10 @@
     font-weight: 400;
 }
 
+.added-locations-list li:hover {
+    display: inline-block;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    width: fit-content;
+}

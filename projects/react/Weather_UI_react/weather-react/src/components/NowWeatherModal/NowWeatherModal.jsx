@@ -10,7 +10,7 @@ const NowWeatherModal = (props) => {
     return (
         <div className="now-weather-modal">
             <TemperatureNumber temperature={props.temperature}/>
-            <WeatherImg/>
+            <WeatherImg iconId={props.iconId}/>
             <LikeLocation
                 locationName={props.locationName}
                 onRemoveLocation={props.onRemoveLocation}

@@ -1,9 +1,11 @@
 import React from 'react';
-import cloud from '../../img/cloud.svg'
 
-const WeatherImg = () => {
+const WeatherImg = (props) => {
+
+    const imgSrc = `http://openweathermap.org/img/wn/${props.iconId}@2x.png`;
+
     return (
-            <img className="weather-img" src={cloud}/>
+            <img className="weather-img" src={imgSrc}/>
     );
 };
 

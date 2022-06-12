@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import "./WeatherModal.css"
 import ModalButtons from "./ModalButtons";
 import ForecastModal from "../ForecastModal/ForecastModal";
@@ -20,6 +20,7 @@ const WeatherModal = (props) => {
                 onAddLocation={props.onAddLocation}
                 isCityInlist={props.isCityInlist}
                 onRemoveLocation={props.onRemoveLocation}
+                iconId={props.iconId}
             />}
             {currentModal === 'Details' && <DetailsModal
                 locationName={props.locationName}
@@ -31,7 +32,10 @@ const WeatherModal = (props) => {
             />}
             {currentModal === 'Forecast' && <ForecastModal
                 forecastInfo={props.forecastInfo}/>}
-            <ModalButtons onNowClick={onButtonModalClickHandler}/>
+            <ModalButtons
+                onNowClick={onButtonModalClickHandler}
+                currentModal={currentModal}
+            />
         </div>
     );
 };

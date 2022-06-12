@@ -15,7 +15,7 @@ const ForecastItem = (props) => {
             <TemperatureIndicator temperature={props.temperature}/>
             <WeatherDescription weatherDescription={props.weatherDescription}/>
             <FeelsLikeTemperature feelsLike={props.feelsLike}/>
-            <WeatherImg/>
+            <WeatherImg iconId={props.iconId}/>
         </div>
     );
 };

@@ -5,13 +5,22 @@ const ModalButtons = (props) => {
 
     return (
         <div className="modal-buttons">
-        <button className='modal-button now-button' onClick={props.onNowClick}>
+        <button className={props.currentModal === 'Now'
+            ? 'modal-button black-background'
+            : 'modal-button'}
+                onClick={props.onNowClick}>
             Now
         </button>
-            <button className='details-button modal-button' onClick={props.onNowClick}>
+            <button className={props.currentModal === 'Details'
+            ? 'modal-button black-background'
+            : 'modal-button'}
+                    onClick={props.onNowClick}>
                 Details
             </button>
-            <button className='forecast-button modal-button' onClick={props.onNowClick}>
+            <button className={props.currentModal === 'Forecast'
+                ? 'modal-button black-background'
+                : 'modal-button'}
+                    onClick={props.onNowClick}>
                 Forecast
             </button>
         </div>

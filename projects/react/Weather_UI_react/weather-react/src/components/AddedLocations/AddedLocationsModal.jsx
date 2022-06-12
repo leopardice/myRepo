@@ -14,7 +14,9 @@ const AddedLocationsModal = (props) => {
             </div>
             <ul className="added-locations-list">
                 {props.addedLocations.map(location => {
-                   return <li onClick={locationClickHandler}>{location}</li>
+                   return <li
+                       key={Math.random().toString()}
+                       onClick={locationClickHandler}>{location}</li>
                 })}
             </ul>
         </div>

@@ -23,7 +23,7 @@ const LocationInput = (props) => {
 
     return (
         <form className="search-form" onSubmit={locationInputSubmitHandler}>
-            <input type="text" placeholder="Aktobe" className="search-field" value={locationName} onChange={changeLocationName}/>
+            <input type="text" placeholder="Rio" className="search-field" value={locationName} onChange={changeLocationName}/>
             <input type="image" src={search} className="search-icon"></input>
         </form>
     );
