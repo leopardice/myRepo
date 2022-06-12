@@ -7,9 +7,10 @@ const API_KEY = 'f660a2fb1e4bad108d6160b7f58c555f';
 
 export async function getWeather(locationName) {
     const url = `${SERVER_URL}${WEATHER_INFO}?q=${locationName}&appid=${API_KEY}`;
-
-    try {
         const response = await fetch(url);
+
+        if (!response.ok) throw new Error("Bad request")
+
         const result = await response.json();
 
         function WeatherInfo() {
@@ -23,31 +24,30 @@ export async function getWeather(locationName) {
         }
 
         return new WeatherInfo();
-    } catch (err) {
-        alert(err);
-    }
 }
 
 export async function getForecast(locationName) {
     const url = `${SERVER_URL}${FORECAST_INFO}?q=${locationName}&appid=${API_KEY}`;
 
-    const response = await fetch(url);
-    const result = await response.json();
-    const forecastArray = result.list;
+        const response = await fetch(url);
+
+        if (!response.ok) throw new Error("Bad request")
+
+        const result = await response.json();
+        const forecastArray = result.list;
 
 
-    const forecastInfo = forecastArray.map(item => {
-        const forecastObject = {
-            id: Math.random().toString(),
-            date: convertDate(item.dt),
-            time: convertTime(item.dt),
-            temperature: convertTemperature(item.main.temp),
-            weatherDescription: item.weather[0].main,
-            feelsLike: convertTemperature(item.main.feels_like),
-            iconId: item.weather[0].icon,
-        }
-        return forecastObject;
-    })
-
-    return forecastInfo;
+        const forecastInfo = forecastArray.map(item => {
+            const forecastObject = {
+                id: Math.random().toString(),
+                date: convertDate(item.dt),
+                time: convertTime(item.dt),
+                temperature: convertTemperature(item.main.temp),
+                weatherDescription: item.weather[0].main,
+                feelsLike: convertTemperature(item.main.feels_like),
+                iconId: item.weather[0].icon,
+            }
+            return forecastObject;
+        })
+        return forecastInfo;
 }

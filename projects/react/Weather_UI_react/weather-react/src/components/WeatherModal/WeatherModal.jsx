@@ -31,7 +31,9 @@ const WeatherModal = (props) => {
                 sunsetTime={props.sunsetTime}
             />}
             {currentModal === 'Forecast' && <ForecastModal
-                forecastInfo={props.forecastInfo}/>}
+                forecastInfo={props.forecastInfo}
+                locationName={props.locationName}
+            />}
             <ModalButtons
                 onNowClick={onButtonModalClickHandler}
                 currentModal={currentModal}

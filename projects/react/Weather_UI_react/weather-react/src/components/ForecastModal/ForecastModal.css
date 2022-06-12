@@ -6,3 +6,8 @@
     margin: 1rem 0rem;
     overflow-y: scroll;
 }
+
+.forecast-modal .location-name {
+    font-size: 3rem;
+    font-weight: 400;
+}

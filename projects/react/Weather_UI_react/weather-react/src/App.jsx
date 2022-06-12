@@ -4,38 +4,43 @@ import './App.css'
 import WeatherModal from "./components/WeatherModal/WeatherModal";
 import {getForecast, getWeather} from "./js/fetchRequests"
 import AddedLocationsModal from "./components/AddedLocations/AddedLocationsModal";
+import {addDataToLocalStorage, getDataFromLocalStorage} from "./js/helpers";
+
+const CURRENT_LOCATION_KEY = 'currentLocation';
+const ADDED_LOCATIONS_KEY = 'addedLocations'
 
 function App() {
-    const [locationName, setLocationName] = useState('Rio');
+    const [locationName, setLocationName] = useState(localStorage.getItem(CURRENT_LOCATION_KEY));
     const [weatherInfo, setWeatherInfo] = useState({});
     const [forecastInfo, setForecastInfo] = useState([]);
-    const [addedLocations, setAddedLocations] = useState(new Set([]));
+    const [addedLocations, setAddedLocations] = useState(new Set(getDataFromLocalStorage(ADDED_LOCATIONS_KEY)));
     const [isCityInList, setIsCityInList] = useState(false);
 
     useEffect(() => {
-        getWeather(locationName)
-            .then(weatherInfo => setWeatherInfo(weatherInfo));
-        getForecast(locationName)
-            .then(forecastInfo => setForecastInfo(forecastInfo));
-    }, []);
-
-
-    useEffect(() => {
        getWeather(locationName)
-           .then(weatherInfo => setWeatherInfo(weatherInfo));
+           .then(weatherInfo => setWeatherInfo(weatherInfo))
+           .catch((e) => {
+               console.log(e)
+               alert("There is no such city");
+           });
        getForecast(locationName)
-           .then(forecastInfo => setForecastInfo(forecastInfo));
-       setIsCityInList([...addedLocations].includes(locationName));
+           .then(forecastInfo => setForecastInfo(forecastInfo))
+           .catch((e) => {
+               console.log(e)
+           });
+        setIsCityInList([...addedLocations].includes(locationName));
     }, [locationName]);
 
     useEffect(() => {
         setIsCityInList([...addedLocations].includes(locationName));
+        addDataToLocalStorage(ADDED_LOCATIONS_KEY, addedLocations);
     }, [addedLocations]);
 
 
-    const onChangeLocationName = (locationName) => {
-        setLocationName(locationName);
-        };
+    const onChangeLocationName = (name) => {
+        setLocationName(name);
+        localStorage.setItem(CURRENT_LOCATION_KEY, name);
+    }
 
     const onAddLocation = () => {
         setAddedLocations(prevState => {

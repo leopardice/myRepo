@@ -11,3 +11,12 @@ export function convertTime(time) {
 export function convertDate(date) {
     return format(new Date(date * 1000), "d LLL");
 }
+
+export function addDataToLocalStorage (key, data) {
+    const dataJSON = JSON.stringify([...data])
+    localStorage.setItem(key, dataJSON);
+}
+
+export function getDataFromLocalStorage (key) {
+    return JSON.parse(localStorage.getItem(key));
+}

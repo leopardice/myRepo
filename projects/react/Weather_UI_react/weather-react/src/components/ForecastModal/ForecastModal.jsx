@@ -18,7 +18,7 @@ const ForecastModal = (props) => {
 
     return (
         <div className='forecast-modal'>
-            <LocationName />
+            <LocationName locationName={props.locationName} />
             {forecastItems}
         </div>
     );
