@@ -1,0 +1,2 @@
+export const INCREMENT = 'INCREMENT';
+export const UPDATE_WEATHER_INFO = 'UPDATE_WEATHER_INFO';
