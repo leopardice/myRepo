@@ -2,9 +2,17 @@ import React from 'react';
 import ForecastItem from "./ForecastItem";
 import './ForecastModal.css'
 import LocationName from "../WeatherInfo/LocationName";
+import {useSelector} from "react-redux";
 
-const ForecastModal = (props) => {
-    const forecastItems = props.forecastInfo.map(item => {
+const ForecastModal = () => {
+
+    const forecastInfo = useSelector( state => {
+            const {forecastInfoReducer} = state;
+            return forecastInfoReducer;
+        }
+    )
+
+    const forecastItems = forecastInfo.map(item => {
         return <ForecastItem
             key={item.id}
             date={item.date}
@@ -18,7 +26,7 @@ const ForecastModal = (props) => {
 
     return (
         <div className='forecast-modal'>
-            <LocationName locationName={props.locationName} />
+            <LocationName />
             {forecastItems}
         </div>
     );

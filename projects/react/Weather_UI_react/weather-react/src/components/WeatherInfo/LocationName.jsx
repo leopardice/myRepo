@@ -1,10 +1,16 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
-const LocationName = (props) => {
+const LocationName = () => {
+
+    const locationName = useSelector( state => {
+        const { weatherInfoReducer } = state;
+        return weatherInfoReducer.name;
+    })
 
     return (
         <div className="location-name">
-            {props.locationName}
+            {locationName}
         </div>
     );
 };

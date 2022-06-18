@@ -6,16 +6,25 @@ import WeatherDescription from "../WeatherInfo/WeatherDescription";
 import SunriseTime from "../WeatherInfo/SunriseTime";
 import SunsetTime from "../WeatherInfo/SunsetTime";
 import "./DetailsModal.css"
+import {useSelector} from "react-redux";
+import TemperatureIndicator from "../WeatherInfo/TemperatureIndicator";
 
-const DetailsModal = (props) => {
+const DetailsModal = () => {
+
+    const weatherInfo = useSelector( state => {
+            const {weatherInfoReducer} = state;
+            return weatherInfoReducer;
+        }
+    )
+
     return (
         <div className="details-modal">
-            <LocationName locationName={props.locationName}/>
-            <TemperatureNow temperature={props.temperature}/>
-            <FeelsLikeTemperature feelsLike={props.feelsLike}/>
-            <WeatherDescription weatherDescription={props.weatherDescription}/>
-            <SunriseTime sunriseTime={props.sunriseTime}/>
-            <SunsetTime sunsetTime={props.sunsetTime}/>
+            <LocationName />
+            <TemperatureIndicator temperature={weatherInfo.temperature}/>
+            <FeelsLikeTemperature feelsLike={weatherInfo.feelsLike}/>
+            <WeatherDescription weatherDescription={weatherInfo.weatherDescription}/>
+            <SunriseTime sunriseTime={weatherInfo.sunriseTime}/>
+            <SunsetTime sunsetTime={weatherInfo.sunsetTime}/>
         </div>
     );
 };
