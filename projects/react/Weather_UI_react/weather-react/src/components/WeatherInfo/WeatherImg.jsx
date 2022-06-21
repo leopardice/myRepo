@@ -1,12 +1,12 @@
 import React from 'react';
 
-const WeatherImg = (props) => {
+function WeatherImg(props) {
+  const { iconId } = props;
+  const imgSrc = `http://openweathermap.org/img/wn/${iconId}@2x.png`;
 
-    const imgSrc = `http://openweathermap.org/img/wn/${props.iconId}@2x.png`;
-
-    return (
-            <img className="weather-img" src={imgSrc}/>
-    );
-};
+  return (
+    <img className="weather-img" src={imgSrc} alt="weather-description" />
+  );
+}
 
 export default WeatherImg;

@@ -1,11 +1,14 @@
 import React from 'react';
 
-const SunriseTime = (props) => {
-    return (
-        <div className="sunrise-time">
-          Sunrise: {props.sunriseTime}
-        </div>
-    );
-};
+function SunriseTime(props) {
+  const { sunriseTime } = props;
+  return (
+    <div className="sunrise-time">
+      Sunrise:
+      {' '}
+      {sunriseTime}
+    </div>
+  );
+}
 
 export default SunriseTime;

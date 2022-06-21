@@ -1,0 +1,8 @@
+.help-page {
+    font-size: inherit;
+    grid-column: -1 / 1;
+    display: flex;
+    justify-content: start;
+    height: 40rem;
+    padding: 1rem 1rem;
+}

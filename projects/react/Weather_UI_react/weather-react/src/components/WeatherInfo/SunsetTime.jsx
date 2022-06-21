@@ -1,11 +1,14 @@
 import React from 'react';
 
-const SunsetTime = (props) => {
-    return (
-        <div>
-            Sunset: {props.sunsetTime}
-        </div>
-    );
-};
+function SunsetTime(props) {
+  const { sunsetTime } = props;
+  return (
+    <div>
+      Sunset:
+      {' '}
+      {sunsetTime}
+    </div>
+  );
+}
 
 export default SunsetTime;

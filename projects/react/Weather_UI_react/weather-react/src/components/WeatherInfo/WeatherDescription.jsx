@@ -1,11 +1,14 @@
 import React from 'react';
 
-const WeatherDescription = (props) => {
-    return (
-        <div>
-           Weather: {props.weatherDescription}
-        </div>
-    );
-};
+function WeatherDescription(props) {
+  const { weatherDescription } = props;
+  return (
+    <div>
+      Weather:
+      {' '}
+      {weatherDescription}
+    </div>
+  );
+}
 
 export default WeatherDescription;

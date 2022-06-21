@@ -1,32 +1,40 @@
-import React, {useState} from 'react';
-import search from "../../img/search.svg"
-import './LocationInput.css'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-const LocationInput = (props) => {
-    const [locationName, setLocationName] = useState('');
+import search from '../../img/search.svg';
+import './LocationInput.css';
+import { updateLocationName } from '../../redux/actions';
 
-    const changeLocationName = (event) => {
-        setLocationName(event.target.value);
-    }
+const CURRENT_LOCATION_KEY = 'currentLocation';
 
-    const locationInputSubmitHandler = (event) => {
-        event.preventDefault();
+function LocationInput() {
+  const [locationName, setLocationName] = useState('');
 
-        const firstLetter = locationName[0].toUpperCase();
-        const otherLetters = locationName.slice(1, locationName.length).toLowerCase();
-        const updatedLocationName= firstLetter.concat(otherLetters);
+  const dispatch = useDispatch();
 
-        props.onChangeLocationName(updatedLocationName);
+  const changeLocationName = (event) => {
+    setLocationName(event.target.value);
+  };
 
-        setLocationName('');
-    }
+  const locationInputSubmitHandler = (event) => {
+    event.preventDefault();
 
-    return (
-        <form className="search-form" onSubmit={locationInputSubmitHandler}>
-            <input type="text" placeholder="Rio" className="search-field" value={locationName} onChange={changeLocationName}/>
-            <input type="image" src={search} className="search-icon"></input>
-        </form>
-    );
-};
+    const firstLetter = locationName[0].toUpperCase();
+    const otherLetters = locationName.slice(1, locationName.length).toLowerCase();
+    const updatedLocationName = firstLetter.concat(otherLetters);
+
+    dispatch(updateLocationName(updatedLocationName));
+    localStorage.setItem(CURRENT_LOCATION_KEY, updatedLocationName);
+
+    setLocationName('');
+  };
+
+  return (
+    <form className="search-form" onSubmit={locationInputSubmitHandler}>
+      <input type="text" placeholder="Rio" className="search-field" value={locationName} onChange={changeLocationName} />
+      <input type="image" src={search} className="search-icon" alt="search" />
+    </form>
+  );
+}
 
 export default LocationInput;

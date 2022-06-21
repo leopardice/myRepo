@@ -1,12 +1,15 @@
 import React from 'react';
-import TemperatureNumber from "./TemperatureNumber";
+import TemperatureNumber from './TemperatureNumber';
 
-const TemperatureIndicator = (props) => {
-    return (
-        <div className="temperature-now">
-            Temperature: <TemperatureNumber temperature={props.temperature}/>
-        </div>
-    );
-};
+function TemperatureIndicator(props) {
+  const { temperature } = props;
+  return (
+    <div className="temperature-now">
+      Temperature:
+      {' '}
+      <TemperatureNumber temperature={temperature} />
+    </div>
+  );
+}
 
 export default TemperatureIndicator;

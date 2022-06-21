@@ -1,11 +1,13 @@
 import React from 'react';
 
-const TemperatureNumber = (props) => {
-    return (
-        <span className="temperature-number">
-            {props.temperature}°
-        </span>
-    );
-};
+function TemperatureNumber(props) {
+  const { temperature } = props;
+  return (
+    <span className="temperature-number">
+      {temperature}
+      °
+    </span>
+  );
+}
 
 export default TemperatureNumber;

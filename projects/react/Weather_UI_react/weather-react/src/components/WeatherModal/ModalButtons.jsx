@@ -1,30 +1,39 @@
 import React from 'react';
-import ModalButton from "../UI/ModalButton";
-import './ModalButtons.css'
-const ModalButtons = (props) => {
+import './ModalButtons.css';
 
-    return (
-        <div className="modal-buttons">
-        <button className={props.currentModal === 'Now'
-            ? 'modal-button black-background'
-            : 'modal-button'}
-                onClick={props.onNowClick}>
-            Now
-        </button>
-            <button className={props.currentModal === 'Details'
-            ? 'modal-button black-background'
-            : 'modal-button'}
-                    onClick={props.onNowClick}>
-                Details
-            </button>
-            <button className={props.currentModal === 'Forecast'
-                ? 'modal-button black-background'
-                : 'modal-button'}
-                    onClick={props.onNowClick}>
-                Forecast
-            </button>
-        </div>
-    );
-};
+function ModalButtons(props) {
+  const { onNowClick, currentModal } = props;
+  return (
+    <div className="modal-buttons">
+      <button
+        type="button"
+        className={currentModal === 'Now'
+          ? 'modal-button black-background'
+          : 'modal-button'}
+        onClick={onNowClick}
+      >
+        Now
+      </button>
+      <button
+        type="button"
+        className={currentModal === 'Details'
+          ? 'modal-button black-background'
+          : 'modal-button'}
+        onClick={onNowClick}
+      >
+        Details
+      </button>
+      <button
+        type="button"
+        className={currentModal === 'Forecast'
+          ? 'modal-button black-background'
+          : 'modal-button'}
+        onClick={onNowClick}
+      >
+        Forecast
+      </button>
+    </div>
+  );
+}
 
 export default ModalButtons;
