@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { CURRENT_LOCATION_KEY } from '../../redux/locationNameReducer';
-import { getForecast, getWeather } from '../../js/fetchRequests';
-import { updateForecastInfo, updateWeatherInfo } from '../../redux/actions';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { CURRENT_LOCATION_KEY } from "../../../redux/locationNameReducer";
+import { getForecast, getWeather } from "../../../js/fetchRequests";
+import { updateForecastInfo, updateWeatherInfo } from "../../../redux/actions";
 
 function LocationName() {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ function LocationName() {
         dispatch(updateWeatherInfo(weatherInfo));
       })
       .catch(() => {
-        alert('There is no such city. Try typing the name again');
+        alert("There is no such city. Try typing the name again");
       });
 
     getForecast(locationName)
@@ -32,11 +32,7 @@ function LocationName() {
     localStorage.setItem(CURRENT_LOCATION_KEY, locationName);
   }, [locationName]);
 
-  return (
-    <div className="location-name">
-      {locationName}
-    </div>
-  );
+  return <div className="location-name">{locationName}</div>;
 }
 
 export default LocationName;

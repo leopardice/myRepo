@@ -1,7 +1,7 @@
-import React from 'react';
-import './AddedLocationsModal.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { updateLocationName } from '../../redux/actions';
+import React from "react";
+import "./AddedLocationsModal.css";
+import { useDispatch, useSelector } from "react-redux";
+import { updateLocationName } from "../../../redux/actions";
 
 function AddedLocationsModal() {
   const dispatch = useDispatch();
@@ -17,15 +17,10 @@ function AddedLocationsModal() {
 
   return (
     <div className="added-locations-modal">
-      <div className="added-locations-title">
-        Added Locations:
-      </div>
+      <div className="added-locations-title">Added Locations:</div>
       <ul className="added-locations-list">
         {favoriteLocationsArray.map((location) => (
-          <li
-            key={Math.random().toString()}
-            onClick={locationClickHandler}
-          >
+          <li key={Math.random().toString()} onClick={locationClickHandler}>
             {location}
           </li>
         ))}

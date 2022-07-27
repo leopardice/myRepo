@@ -1,15 +1,15 @@
-import { convertDate, convertTemperature, convertTime } from './helpers';
+import { convertDate, convertTemperature, convertTime } from "./helpers";
 
-const SERVER_URL = 'https://api.openweathermap.org/data/2.5';
-const WEATHER_INFO = '/weather';
-const FORECAST_INFO = '/forecast';
-const API_KEY = 'f660a2fb1e4bad108d6160b7f58c555f';
+const SERVER_URL = "https://api.openweathermap.org/data/2.5";
+const WEATHER_INFO = "/weather";
+const FORECAST_INFO = "/forecast";
+const API_KEY = "f660a2fb1e4bad108d6160b7f58c555f";
 
 export async function getWeather(locationName) {
   const url = `${SERVER_URL}${WEATHER_INFO}?q=${locationName}&appid=${API_KEY}`;
   const response = await fetch(url);
 
-  if (!response.ok) throw new Error('Bad request');
+  if (!response.ok) throw new Error("Bad request");
 
   const result = await response.json();
 
@@ -31,7 +31,7 @@ export async function getForecast(locationName) {
 
   const response = await fetch(url);
 
-  if (!response.ok) throw new Error('Bad request');
+  if (!response.ok) throw new Error("Bad request");
 
   const result = await response.json();
   const forecastArray = result.list;

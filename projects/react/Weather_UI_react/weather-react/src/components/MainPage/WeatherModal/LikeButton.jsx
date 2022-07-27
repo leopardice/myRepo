@@ -1,12 +1,15 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import heartClear from '../../img/heartClear.svg';
-import heartBlack from '../../img/heartBlack.svg';
-import './LikeButton.css';
-import { addFavoriteLocation, removeFavoriteLocation } from '../../redux/actions';
-import { addDataToLocalStorage } from '../../js/helpers';
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import heartClear from "../../../img/heartClear.svg";
+import heartBlack from "../../../img/heartBlack.svg";
+import "./LikeButton.css";
+import {
+  addFavoriteLocation,
+  removeFavoriteLocation,
+} from "../../../redux/actions";
+import { addDataToLocalStorage } from "../../../js/helpers";
 
-const ADDED_LOCATIONS_KEY = 'addedLocations';
+const ADDED_LOCATIONS_KEY = "addedLocations";
 
 function LikeButton() {
   const dispatch = useDispatch();
@@ -39,7 +42,13 @@ function LikeButton() {
   const likeButtonClickHandler = isCityInlist ? removeLocation : addLocation;
 
   return (
-    <input type="image" src={likeImgSrc} className="like-button" onClick={likeButtonClickHandler} alt="like-button" />
+    <input
+      type="image"
+      src={likeImgSrc}
+      className="like-button"
+      onClick={likeButtonClickHandler}
+      alt="like-button"
+    />
   );
 }
 

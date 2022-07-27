@@ -1,8 +1,8 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import ForecastItem from './ForecastItem';
-import './ForecastModal.css';
-import LocationName from '../WeatherInfo/LocationName';
+import React from "react";
+import { useSelector } from "react-redux";
+import ForecastItem from "./ForecastItem";
+import "./ForecastModal.css";
+import LocationName from "../WeatherInfo/LocationName";
 
 function ForecastModal() {
   const forecastInfo = useSelector((state) => {

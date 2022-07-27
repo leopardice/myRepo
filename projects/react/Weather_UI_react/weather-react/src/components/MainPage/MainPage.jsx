@@ -1,8 +1,8 @@
-import React from 'react';
-import LocationInput from '../LocationInput/LocationInput';
-import WeatherModal from '../WeatherModal/WeatherModal';
-import AddedLocationsModal from '../AddedLocations/AddedLocationsModal';
-import './MainPage.css';
+import React from "react";
+import LocationInput from "./LocationInput/LocationInput";
+import WeatherModal from "./WeatherModal/WeatherModal";
+import AddedLocationsModal from "./AddedLocations/AddedLocationsModal";
+import "./MainPage.css";
 
 function MainPage() {
   return (
